@@ -1,9 +1,5 @@
 import { tForScan } from "@/i18n/common";
 
-// import { ReactComponent as CustomerIcon } from "@/images/icons/icon-customer.svg";
-// import { ReactComponent as HomeIcon } from "@/images/icons/icon-home.svg";
-// import { ReactComponent as MypageIcon } from "@/images/icons/icon-mypage.svg";
-
 export const MENU = [
   {
     name: tForScan("홈"),

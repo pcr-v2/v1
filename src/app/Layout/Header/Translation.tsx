@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { CiGlobe } from "react-icons/ci";
 
+import En from "@/assets/images/header/eng.png";
+import Ko from "@/assets/images/header/kor.png";
 import { switchLanguage } from "@/i18n/actions";
-import En from "@/images/header/eng.png";
-import Ko from "@/images/header/kor.png";
 
 const Lang_Datas = ["en", "ko"];
 

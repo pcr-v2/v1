@@ -1,6 +1,6 @@
 import React from "react";
 
-import TestImg from "@/images/test.png";
+import TestImg from "@/assets/images/test.png";
 
 export default function Content() {
   return (

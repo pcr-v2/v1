@@ -1,6 +1,6 @@
 import { styled } from "@mui/material";
 
-import Logo from "@/images/header/logo.png";
+import Logo from "@/assets/images/header/logo.png";
 
 export default function Title() {
   return <ImgST src={Logo.src} alt="logo" />;
