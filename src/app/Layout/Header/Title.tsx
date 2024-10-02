@@ -8,8 +8,8 @@ export default function Title() {
 
 const ImgST = styled("img")(() => {
   return {
-    width: "200px",
-    height: "60px",
-    padding: "8px",
+    width: "120px",
+    height: "44px",
+    padding: "4px",
   };
 });

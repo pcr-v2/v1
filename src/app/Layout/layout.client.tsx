@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Button } from "@mui/material";
+import { Box, Button, ThemeProvider } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { ReactNode, useMemo } from "react";
 import { I18nextProvider, useTranslation } from "react-i18next";
@@ -10,6 +10,7 @@ import Header from "@/app/Layout/Header";
 import SmootScroll from "@/app/Layout/SmootScroll";
 import { switchLanguage } from "@/i18n/actions";
 import { createClientI18n } from "@/i18n/client";
+import theme from "@/theme";
 
 import { RootToaster } from "./RootToaster";
 
@@ -29,15 +30,17 @@ export default function RootClientLayout({
   const router = useRouter();
 
   return (
-    <I18nextProvider i18n={i18n}>
-      <SmootScroll>
-        <Header />
+    <ThemeProvider theme={theme}>
+      <I18nextProvider i18n={i18n}>
+        <SmootScroll>
+          <Header />
 
-        {children}
+          {children}
 
-        <Footer />
-      </SmootScroll>
-      <RootToaster max={3} />
-    </I18nextProvider>
+          <Footer />
+        </SmootScroll>
+        <RootToaster max={3} />
+      </I18nextProvider>
+    </ThemeProvider>
   );
 }

@@ -37,7 +37,7 @@ export default function Translation() {
       whileTap={{ scale: 0.85 }}
       onClick={handleClick}
     >
-      <CiGlobe style={{ width: "100%", height: "100%" }} />
+      <GlobeIcon />
 
       {openPopper && (
         <FPopperBox
@@ -115,12 +115,14 @@ const ImgST = styled("img")(() => {
   };
 });
 
-const Divider = styled(Box)(() => {
+const GlobeIcon = styled(CiGlobe)(({ theme }) => {
   return {
-    width: "80%",
-    height: "2px",
-    display: "flex",
-    margin: "4px 0px",
-    backgroundColor: "#fafafa",
+    width: "32px",
+    height: "32px",
+
+    [theme.breakpoints.down("md")]: {
+      width: "24px",
+      height: "24px",
+    },
   };
 });

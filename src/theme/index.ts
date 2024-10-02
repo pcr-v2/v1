@@ -10,7 +10,7 @@ const theme = createTheme({
     values: {
       xs: 360,
       sm: 600,
-      md: 900,
+      md: 768,
       lg: 1200,
       xl: 1536,
       mobile: 375,
