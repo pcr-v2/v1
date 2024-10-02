@@ -6,7 +6,7 @@ export default function Content() {
   return (
     <section className="content">
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac
+        Lorem ipsum 2222dolor sit amet, consectetur adipiscing elit. Aliquam ac
         lobortis dui, qqqqvel cursus elit. Maecenas quis facilisis libero, quis
         porta libero. Mauasdfasdfris suscipit, dolor in porttitor sodales,
         lectus leo tempor lorem, nec euismod magna orci in metus. Aliquam erat
