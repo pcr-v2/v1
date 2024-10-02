@@ -4,7 +4,7 @@ import { Box, styled } from "@mui/material";
 import React from "react";
 
 export default function page() {
-  return <Wrapper>framer-motion</Wrapper>;
+  return <Wrapper>framer-motion222</Wrapper>;
 }
 
 const Wrapper = styled(Box)(() => {
