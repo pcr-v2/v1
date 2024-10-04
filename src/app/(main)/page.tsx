@@ -20,6 +20,7 @@ const Wrapper = styled(Box)(() => {
     gap: "20px",
     width: "100%",
     display: "flex",
+    minHeight: "100vh",
     alignItems: "center",
     flexDirection: "column",
     justifyContent: "center",

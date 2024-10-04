@@ -2,7 +2,7 @@
 
 import { Box, styled } from "@mui/material";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import React, { useState } from "react";
 import { CiGlobe } from "react-icons/ci";
 
 import En from "@/assets/images/header/eng.png";
@@ -48,13 +48,13 @@ export default function Translation() {
         >
           {Lang_Datas.map((el, index) => {
             return (
-              <>
+              <React.Fragment key={index}>
                 <LangBox onClick={() => handleLanguage(el as "en" | "ko")}>
                   <ImgST src={el === "en" ? En.src : Ko.src} alt={el} />
                   {el}
                 </LangBox>
                 {index !== Lang_Datas.length - 1}
-              </>
+              </React.Fragment>
             );
           })}
         </FPopperBox>

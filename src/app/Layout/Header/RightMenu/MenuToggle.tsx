@@ -1,5 +1,6 @@
 "use client";
 
+import { Box, styled } from "@mui/material";
 import { motion, useAnimation } from "framer-motion";
 
 interface IProps {
@@ -53,17 +54,8 @@ export default function MenuToggle(props: IProps) {
   };
 
   return (
-    <div
-      onClick={handleToggle}
-      style={{
-        cursor: "pointer",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        border: "1px solid red",
-      }}
-    >
-      <svg width="52" height="52" viewBox="0 0 30 30">
+    <Wrapper onClick={handleToggle}>
+      <svg width="24" height="24" viewBox="0 0 24 24">
         <motion.path
           {...path03Variants.closed} // 새로운 path 추가
           animate={path03Controls} // 이 path는 닫힘과 열림 모두 동일
@@ -83,6 +75,15 @@ export default function MenuToggle(props: IProps) {
           stroke="#000"
         />
       </svg>
-    </div>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled(Box)(({ theme }) => {
+  return {
+    cursor: "pointer",
+    [theme.breakpoints.up("tablet")]: {
+      display: "none",
+    },
+  };
+});

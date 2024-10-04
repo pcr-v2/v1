@@ -1,39 +1,9 @@
 import { Box, styled } from "@mui/material";
 import { useRouter } from "next/navigation";
 
-import AccordionItem from "@/app/Layout/Footer/AccordionItem";
 import TitleItem from "@/app/Layout/Footer/TitleItem";
-
-type TFooterAccordionData = {
-  accordionId: "Skills" | "Mind" | "About Me";
-  title: "Skills" | "Mind" | "About Me";
-  contents: string[];
-};
-
-const Footer_Accordion_Datas: TFooterAccordionData[] = [
-  {
-    title: "Skills",
-    accordionId: "Skills",
-    contents: [
-      "TypeScript",
-      "React",
-      "NextJS",
-      "Node Express",
-      "ThreeJS",
-      "Framer Motion",
-    ],
-  },
-  {
-    title: "Mind",
-    accordionId: "Mind",
-    contents: ["Developer's Mind", "How To Cowork"],
-  },
-  {
-    title: "About Me",
-    accordionId: "About Me",
-    contents: ["Study", "Hobby", "Life Mindset"],
-  },
-];
+import FooterAccordion from "@/app/Layout/Footer/accordion";
+import { MENUS } from "@/config/MenuConfig";
 
 export default function Footer() {
   const router = useRouter();
@@ -42,13 +12,14 @@ export default function Footer() {
     <Wrapper>
       <TitleItem onClick={(value: string) => router.push(value)} />
 
-      {Footer_Accordion_Datas.map((data) => {
+      {MENUS.map((menu) => {
         return (
-          <FooterItem key={data.accordionId}>
-            <AccordionItem
-              title={data.title}
-              accordionId={data.accordionId}
-              contents={data.contents}
+          <FooterItem key={menu.name}>
+            <FooterAccordion
+              name={menu.name}
+              href={menu.href}
+              icon={menu.icon}
+              children={menu.children}
             />
           </FooterItem>
         );

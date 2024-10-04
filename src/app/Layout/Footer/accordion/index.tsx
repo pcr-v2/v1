@@ -7,40 +7,44 @@ import {
   AccordionSummary,
   styled,
 } from "@mui/material";
-import { useRouter } from "next/navigation";
+import { ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 
-import FooterContent from "@/app/Layout/Footer/FooterContent";
+import AccordionItemLists from "@/app/Layout/Footer/accordion/ItemLists";
 
 interface IProps {
-  accordionId: "Skills" | "Mind" | "About Me";
-  title: "Skills" | "Mind" | "About Me";
-  contents: string[];
+  name: string;
+  href: string;
+  icon: ReactNode;
+  children: {
+    name: string;
+    href: string;
+    icon: ReactNode;
+  }[];
 }
-export default function AccordionItem(props: IProps) {
-  const { accordionId, title, contents } = props;
-
-  const router = useRouter();
+export default function FooterAccordion(props: IProps) {
+  const { name, children } = props;
   const { t } = useTranslation();
 
   return (
     <Wrapper>
       <AccordionSummary
-        id={accordionId}
+        id={name}
         expandIcon={<ExpandMore sx={{ alignItems: "flex-start" }} />}
       >
         <span style={{ fontFamily: "suit-700", fontSize: "18px" }}>
-          {t(title)}
+          {t(name)}
         </span>
       </AccordionSummary>
 
       <AccordionDetailST>
-        {contents.map((cnt, index) => {
+        {children.map((data) => {
           return (
-            <FooterContent
-              content={cnt}
-              title={title}
-              key={`skills icon key ${index}`}
+            <AccordionItemLists
+              icon={data.icon}
+              href={data.href}
+              name={data.name}
+              key={`skills icon key ${data.name}`}
             />
           );
         })}
